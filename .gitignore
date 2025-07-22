@@ -1,16 +1,135 @@
-# .gitignore
+# .gitignore - Smart Hospital AI Assistant
 
 # 環境変数ファイル（APIキーが含まれるため絶対にアップロード禁止）
 .env
 .env.local
 .env.production
 
-# Python関連
+# FAISS ベクトルデータベース（サイズが大きいため）
+faiss_index_admin/
+faiss_index_medical/
+*.index
+*.pkl
+
+# 機密データ
+patients_real.json
+secret_*
+private_*
+
+# 実際の医療データ（ダミーデータのみコミット）
+src/data/admin_docs/real_*
+src/data/medical_docs/real_*
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+# C extensions
 *.so
+
+# Distribution / packaging
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+pdm.lock
+.pdm.toml
+.pdm-python
+.pdm-build/
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.envrc
+.venv
 env/
 venv/
 ENV/
@@ -20,19 +139,37 @@ venv.bak/
 # Conda環境
 .conda/
 
-# FAISS ベクトルデータベース（サイズが大きいため）
-faiss_index_admin/
-faiss_index_medical/
-*.index
-*.pkl
+# Spyder project settings
+.spyderproject
+.spyproject
 
-# ログファイル
-*.log
-logs/
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+.idea/
+
+# Visual Studio Code
+.vscode/
 
 # IDEファイル
-.vscode/
-.idea/
 *.swp
 *.swo
 *~
@@ -50,17 +187,25 @@ Desktop.ini
 # 一時ファイル
 *.tmp
 *.temp
-.cache/
 
 # ngrok
 ngrok
 ngrok.exe
 
-# 機密データ
-patients_real.json
-secret_*
-private_*
+# ログファイル
+logs/
 
-# 実際の医療データ（ダミーデータのみコミット）
-src/data/admin_docs/real_*
-src/data/medical_docs/real_*
+# Ruff
+.ruff_cache/
+
+# Cursor
+.cursorignore
+.cursorindexingignore
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
+
+# Abstra
+.abstra/
