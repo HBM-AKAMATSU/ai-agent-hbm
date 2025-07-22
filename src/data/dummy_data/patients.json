@@ -1,0 +1,11 @@
+{
+  "patients": [
+    {
+      "id": "P-001",
+      "name": "田中太郎",
+      "allergies": ["ペニシリン"],
+      "current_medications": ["バイアスピリン100mg"],
+      "conditions": ["高血圧", "糖尿病"]
+    }
+  ]
+}
