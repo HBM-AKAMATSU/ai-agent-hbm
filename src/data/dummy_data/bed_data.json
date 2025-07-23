@@ -1,0 +1,604 @@
+{
+  "bed_data": [
+    {
+      "month": "2025-07",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 98,
+      "occupancy_rate": 0.822,
+      "avg_length_of_stay": 14.9,
+      "admissions": 197,
+      "discharges": 187
+    },
+    {
+      "month": "2025-07",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.704,
+      "avg_length_of_stay": 3.2,
+      "admissions": 46,
+      "discharges": 43
+    },
+    {
+      "month": "2025-07",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 8,
+      "occupancy_rate": 0.733,
+      "avg_length_of_stay": 6.3,
+      "admissions": 38,
+      "discharges": 36
+    },
+    {
+      "month": "2025-07",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 35,
+      "occupancy_rate": 0.886,
+      "avg_length_of_stay": 62.1,
+      "admissions": 16,
+      "discharges": 16
+    },
+    {
+      "month": "2025-07",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 58,
+      "occupancy_rate": 0.98,
+      "avg_length_of_stay": 214.4,
+      "admissions": 8,
+      "discharges": 7
+    },
+    {
+      "month": "2025-06",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 93,
+      "occupancy_rate": 0.778,
+      "avg_length_of_stay": 14.1,
+      "admissions": 197,
+      "discharges": 187
+    },
+    {
+      "month": "2025-06",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 6,
+      "occupancy_rate": 0.786,
+      "avg_length_of_stay": 4.2,
+      "admissions": 43,
+      "discharges": 41
+    },
+    {
+      "month": "2025-06",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 9,
+      "occupancy_rate": 0.809,
+      "avg_length_of_stay": 6.6,
+      "admissions": 40,
+      "discharges": 38
+    },
+    {
+      "month": "2025-06",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 35,
+      "occupancy_rate": 0.9,
+      "avg_length_of_stay": 64.5,
+      "admissions": 16,
+      "discharges": 15
+    },
+    {
+      "month": "2025-06",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 58,
+      "occupancy_rate": 0.98,
+      "avg_length_of_stay": 183.1,
+      "admissions": 9,
+      "discharges": 9
+    },
+    {
+      "month": "2025-05",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 98,
+      "occupancy_rate": 0.819,
+      "avg_length_of_stay": 14.1,
+      "admissions": 208,
+      "discharges": 197
+    },
+    {
+      "month": "2025-05",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.7,
+      "avg_length_of_stay": 3.6,
+      "admissions": 41,
+      "discharges": 39
+    },
+    {
+      "month": "2025-05",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 9,
+      "occupancy_rate": 0.757,
+      "avg_length_of_stay": 6.5,
+      "admissions": 41,
+      "discharges": 39
+    },
+    {
+      "month": "2025-05",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 39,
+      "occupancy_rate": 0.98,
+      "avg_length_of_stay": 79.7,
+      "admissions": 14,
+      "discharges": 13
+    },
+    {
+      "month": "2025-05",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 58,
+      "occupancy_rate": 0.973,
+      "avg_length_of_stay": 191.0,
+      "admissions": 9,
+      "discharges": 8
+    },
+    {
+      "month": "2025-04",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 96,
+      "occupancy_rate": 0.803,
+      "avg_length_of_stay": 14.4,
+      "admissions": 199,
+      "discharges": 189
+    },
+    {
+      "month": "2025-04",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.695,
+      "avg_length_of_stay": 3.9,
+      "admissions": 38,
+      "discharges": 36
+    },
+    {
+      "month": "2025-04",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.845,
+      "avg_length_of_stay": 7.8,
+      "admissions": 38,
+      "discharges": 36
+    },
+    {
+      "month": "2025-04",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 35,
+      "occupancy_rate": 0.893,
+      "avg_length_of_stay": 73.0,
+      "admissions": 14,
+      "discharges": 13
+    },
+    {
+      "month": "2025-04",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 52,
+      "occupancy_rate": 0.874,
+      "avg_length_of_stay": 236.7,
+      "admissions": 6,
+      "discharges": 6
+    },
+    {
+      "month": "2025-03",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 94,
+      "occupancy_rate": 0.783,
+      "avg_length_of_stay": 14.4,
+      "admissions": 196,
+      "discharges": 186
+    },
+    {
+      "month": "2025-03",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.731,
+      "avg_length_of_stay": 3.6,
+      "admissions": 42,
+      "discharges": 40
+    },
+    {
+      "month": "2025-03",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.835,
+      "avg_length_of_stay": 5.2,
+      "admissions": 57,
+      "discharges": 54
+    },
+    {
+      "month": "2025-03",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 33,
+      "occupancy_rate": 0.839,
+      "avg_length_of_stay": 89.6,
+      "admissions": 11,
+      "discharges": 10
+    },
+    {
+      "month": "2025-03",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 57,
+      "occupancy_rate": 0.958,
+      "avg_length_of_stay": 274.2,
+      "admissions": 6,
+      "discharges": 5
+    },
+    {
+      "month": "2025-02",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 103,
+      "occupancy_rate": 0.859,
+      "avg_length_of_stay": 15.5,
+      "admissions": 199,
+      "discharges": 189
+    },
+    {
+      "month": "2025-02",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 6,
+      "occupancy_rate": 0.819,
+      "avg_length_of_stay": 3.5,
+      "admissions": 52,
+      "discharges": 49
+    },
+    {
+      "month": "2025-02",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.857,
+      "avg_length_of_stay": 6.6,
+      "admissions": 45,
+      "discharges": 42
+    },
+    {
+      "month": "2025-02",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 33,
+      "occupancy_rate": 0.833,
+      "avg_length_of_stay": 86.0,
+      "admissions": 11,
+      "discharges": 10
+    },
+    {
+      "month": "2025-02",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 55,
+      "occupancy_rate": 0.931,
+      "avg_length_of_stay": 209.0,
+      "admissions": 7,
+      "discharges": 7
+    },
+    {
+      "month": "2025-01",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 103,
+      "occupancy_rate": 0.861,
+      "avg_length_of_stay": 15.0,
+      "admissions": 206,
+      "discharges": 196
+    },
+    {
+      "month": "2025-01",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.728,
+      "avg_length_of_stay": 3.3,
+      "admissions": 45,
+      "discharges": 43
+    },
+    {
+      "month": "2025-01",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 9,
+      "occupancy_rate": 0.819,
+      "avg_length_of_stay": 7.0,
+      "admissions": 38,
+      "discharges": 36
+    },
+    {
+      "month": "2025-01",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 38,
+      "occupancy_rate": 0.97,
+      "avg_length_of_stay": 86.0,
+      "admissions": 13,
+      "discharges": 12
+    },
+    {
+      "month": "2025-01",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 51,
+      "occupancy_rate": 0.861,
+      "avg_length_of_stay": 238.2,
+      "admissions": 6,
+      "discharges": 6
+    },
+    {
+      "month": "2024-12",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 99,
+      "occupancy_rate": 0.831,
+      "avg_length_of_stay": 14.5,
+      "admissions": 205,
+      "discharges": 195
+    },
+    {
+      "month": "2024-12",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 6,
+      "occupancy_rate": 0.78,
+      "avg_length_of_stay": 4.8,
+      "admissions": 37,
+      "discharges": 35
+    },
+    {
+      "month": "2024-12",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 8,
+      "occupancy_rate": 0.743,
+      "avg_length_of_stay": 5.8,
+      "admissions": 41,
+      "discharges": 39
+    },
+    {
+      "month": "2024-12",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 33,
+      "occupancy_rate": 0.831,
+      "avg_length_of_stay": 79.1,
+      "admissions": 12,
+      "discharges": 11
+    },
+    {
+      "month": "2024-12",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 58,
+      "occupancy_rate": 0.98,
+      "avg_length_of_stay": 259.9,
+      "admissions": 6,
+      "discharges": 6
+    },
+    {
+      "month": "2024-11",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 99,
+      "occupancy_rate": 0.832,
+      "avg_length_of_stay": 15.7,
+      "admissions": 189,
+      "discharges": 180
+    },
+    {
+      "month": "2024-11",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.679,
+      "avg_length_of_stay": 3.8,
+      "admissions": 39,
+      "discharges": 37
+    },
+    {
+      "month": "2024-11",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.863,
+      "avg_length_of_stay": 6.2,
+      "admissions": 48,
+      "discharges": 45
+    },
+    {
+      "month": "2024-11",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 33,
+      "occupancy_rate": 0.836,
+      "avg_length_of_stay": 88.2,
+      "admissions": 11,
+      "discharges": 10
+    },
+    {
+      "month": "2024-11",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 56,
+      "occupancy_rate": 0.946,
+      "avg_length_of_stay": 280.9,
+      "admissions": 5,
+      "discharges": 5
+    },
+    {
+      "month": "2024-10",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 95,
+      "occupancy_rate": 0.798,
+      "avg_length_of_stay": 15.4,
+      "admissions": 184,
+      "discharges": 175
+    },
+    {
+      "month": "2024-10",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 6,
+      "occupancy_rate": 0.814,
+      "avg_length_of_stay": 3.3,
+      "admissions": 54,
+      "discharges": 51
+    },
+    {
+      "month": "2024-10",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.857,
+      "avg_length_of_stay": 7.9,
+      "admissions": 38,
+      "discharges": 36
+    },
+    {
+      "month": "2024-10",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 33,
+      "occupancy_rate": 0.838,
+      "avg_length_of_stay": 65.4,
+      "admissions": 15,
+      "discharges": 14
+    },
+    {
+      "month": "2024-10",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 55,
+      "occupancy_rate": 0.921,
+      "avg_length_of_stay": 193.7,
+      "admissions": 8,
+      "discharges": 8
+    },
+    {
+      "month": "2024-09",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 95,
+      "occupancy_rate": 0.792,
+      "avg_length_of_stay": 12.4,
+      "admissions": 229,
+      "discharges": 217
+    },
+    {
+      "month": "2024-09",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.695,
+      "avg_length_of_stay": 3.8,
+      "admissions": 39,
+      "discharges": 37
+    },
+    {
+      "month": "2024-09",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 9,
+      "occupancy_rate": 0.796,
+      "avg_length_of_stay": 6.0,
+      "admissions": 45,
+      "discharges": 42
+    },
+    {
+      "month": "2024-09",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 38,
+      "occupancy_rate": 0.957,
+      "avg_length_of_stay": 62.9,
+      "admissions": 18,
+      "discharges": 17
+    },
+    {
+      "month": "2024-09",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 56,
+      "occupancy_rate": 0.94,
+      "avg_length_of_stay": 209.1,
+      "admissions": 8,
+      "discharges": 7
+    },
+    {
+      "month": "2024-08",
+      "bed_type": "一般病床",
+      "total_beds": 120,
+      "occupied_beds": 97,
+      "occupancy_rate": 0.815,
+      "avg_length_of_stay": 13.1,
+      "admissions": 222,
+      "discharges": 210
+    },
+    {
+      "month": "2024-08",
+      "bed_type": "ICU",
+      "total_beds": 8,
+      "occupied_beds": 5,
+      "occupancy_rate": 0.743,
+      "avg_length_of_stay": 4.4,
+      "admissions": 33,
+      "discharges": 32
+    },
+    {
+      "month": "2024-08",
+      "bed_type": "HCU",
+      "total_beds": 12,
+      "occupied_beds": 10,
+      "occupancy_rate": 0.856,
+      "avg_length_of_stay": 7.7,
+      "admissions": 39,
+      "discharges": 37
+    },
+    {
+      "month": "2024-08",
+      "bed_type": "回復期リハ病床",
+      "total_beds": 40,
+      "occupied_beds": 37,
+      "occupancy_rate": 0.945,
+      "avg_length_of_stay": 81.3,
+      "admissions": 13,
+      "discharges": 12
+    },
+    {
+      "month": "2024-08",
+      "bed_type": "療養病床",
+      "total_beds": 60,
+      "occupied_beds": 57,
+      "occupancy_rate": 0.962,
+      "avg_length_of_stay": 244.5,
+      "admissions": 6,
+      "discharges": 6
+    }
+  ]
+}

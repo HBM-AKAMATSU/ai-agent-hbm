@@ -1,0 +1,145 @@
+{
+  "billing_return_analysis": {
+    "analysis_period": "2023年4月〜2024年3月",
+    "total_claims": 45678,
+    "total_returns": 1734,
+    "overall_return_rate": 3.8,
+    
+    "top_return_procedures": [
+      {
+        "rank": 1,
+        "procedure_code": "K664",
+        "procedure_name": "胃瘻造設術",
+        "return_count": 127,
+        "total_claims": 234,
+        "return_rate": 54.3,
+        "main_return_reasons": [
+          "適応病名の記載不備（胃癌、嚥下障害等の明記不足）",
+          "他の栄養管理法の検討経緯が不明",
+          "家族への説明・同意書の添付漏れ"
+        ],
+        "financial_impact": 8467000,
+        "improvement_actions": [
+          "適応判定フローチャートの作成",
+          "病名詳記テンプレートの整備",
+          "NST（栄養サポートチーム）記録の標準化"
+        ]
+      },
+      {
+        "rank": 2,
+        "procedure_code": "J038",
+        "procedure_name": "人工呼吸器管理料",
+        "return_count": 89,
+        "total_claims": 167,
+        "return_rate": 53.3,
+        "main_return_reasons": [
+          "離脱試行の記録不備",
+          "適応期間の妥当性説明不足",  
+          "合併症管理の記載漏れ"
+        ],
+        "financial_impact": 12340000,
+        "improvement_actions": [
+          "呼吸器離脱プロトコルの文書化",
+          "日々の評価記録様式の統一",
+          "ICU専従医による記録チェック体制"
+        ]
+      },
+      {
+        "rank": 3,
+        "procedure_code": "K636",
+        "procedure_name": "腹腔鏡下低位前方切除術",
+        "return_count": 73,
+        "total_claims": 156,
+        "return_rate": 46.8,
+        "main_return_reasons": [
+          "手術適応の根拠不足（画像所見との整合性）",
+          "術式選択理由の説明不備",
+          "合併症リスクの事前評価記録なし"
+        ],
+        "financial_impact": 15680000,
+        "improvement_actions": [
+          "MDT（多職種チーム）記録の充実",
+          "術前カンファレンス議事録の診療録記載",
+          "手術適応基準の明文化"
+        ]
+      }
+    ],
+    
+    "return_by_disease_code": [
+      {
+        "rank": 1,
+        "disease_code": "E11.9",
+        "disease_name": "2型糖尿病、合併症なし",
+        "return_count": 234,
+        "main_issues": [
+          "HbA1c値と病名の重症度不一致",
+          "合併症の有無判定基準不明確",
+          "治療内容と病名の整合性"
+        ]
+      },
+      {
+        "rank": 2,
+        "disease_code": "I50.9",
+        "disease_name": "心不全、詳細不明",
+        "return_count": 189,
+        "main_issues": [
+          "NYHA分類の記載漏れ",
+          "左室機能評価所見の不備",
+          "原因疾患の特定不足"
+        ]  
+      },
+      {
+        "rank": 3,
+        "disease_code": "J44.1", 
+        "disease_name": "急性増悪を伴う閉塞性慢性肺疾患",
+        "return_count": 167,
+        "main_issues": [
+          "急性増悪の診断基準不明",
+          "過去の増悪歴記載不足",
+          "治療反応性の評価記録なし"
+        ]
+      }
+    ],
+    
+    "monthly_trends": {
+      "2023-04": 134,
+      "2023-05": 142,
+      "2023-06": 156,
+      "2023-07": 148,
+      "2023-08": 139,
+      "2023-09": 145,
+      "2023-10": 152,
+      "2023-11": 149,
+      "2023-12": 144,
+      "2024-01": 138,
+      "2024-02": 143,
+      "2024-03": 144
+    },
+    
+    "department_analysis": {
+      "循環器内科": {
+        "return_rate": 4.2,
+        "primary_issues": ["病名詳記不足", "検査根拠不明"],
+        "improvement_trend": "改善傾向（前年比-12%）"
+      },
+      "消化器外科": {
+        "return_rate": 5.8,
+        "primary_issues": ["手術適応根拠", "術式選択理由"],
+        "improvement_trend": "横ばい"
+      },
+      "呼吸器内科": {
+        "return_rate": 4.9,
+        "primary_issues": ["画像診断根拠", "治療選択理由"],
+        "improvement_trend": "悪化傾向（前年比+8%）"
+      }
+    },
+    
+    "financial_impact_summary": {
+      "total_return_amount": 89560000,
+      "recovered_after_resubmission": 67240000,
+      "final_loss": 22320000,
+      "recovery_rate": 75.1,
+      "administrative_cost": 3480000
+    }
+  }
+}

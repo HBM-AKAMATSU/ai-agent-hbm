@@ -18,3 +18,6 @@ class Config:
     
     # N8N設定
     N8N_WEBHOOK_URL = os.getenv('N8N_WEBHOOK_URL', '')  # デフォルト値を空文字に設定
+    
+    # Web検索API設定
+    SERPER_API_KEY = os.getenv('SERPER_API_KEY')  # Serper API（Google検索）
