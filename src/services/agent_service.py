@@ -315,10 +315,12 @@ class HospitalAIAgent:
                 result_parts = []
                 if numeric_data.get("financial"):
                     financial_data = numeric_data["financial"][:3]  # 上位3つ
-                    result_parts.append(f"財務データ: {', '.join([f'{item['amount']}{item['currency']}' for item in financial_data])}")
+                    financial_items = [f"{item['amount']}{item['currency']}" for item in financial_data]
+                    result_parts.append(f"財務データ: {', '.join(financial_items)}")
                 if numeric_data.get("percentages"):
                     percentage_data = numeric_data["percentages"][:3]
-                    result_parts.append(f"割合データ: {', '.join([f'{item['value']}{item['unit']}' for item in percentage_data])}")
+                    percentage_items = [f"{item['value']}{item['unit']}" for item in percentage_data]
+                    result_parts.append(f"割合データ: {', '.join(percentage_items)}")
                 if result_parts:
                     return "\n".join(result_parts)
         

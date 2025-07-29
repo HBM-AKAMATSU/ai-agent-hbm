@@ -335,10 +335,12 @@ class ReportParser:
             result_parts = []
             
             if numeric_data.get("financial"):
-                result_parts.append(f"財務データ: {', '.join([f'{item['amount']}{item['currency']}' for item in numeric_data['financial']])}")
+                financial_items = [f"{item['amount']}{item['currency']}" for item in numeric_data['financial']]
+                result_parts.append(f"財務データ: {', '.join(financial_items)}")
             
             if numeric_data.get("percentages"):
-                result_parts.append(f"割合データ: {', '.join([f'{item['value']}{item['unit']}' for item in numeric_data['percentages']])}")
+                percentage_items = [f"{item['value']}{item['unit']}" for item in numeric_data['percentages']]
+                result_parts.append(f"割合データ: {', '.join(percentage_items)}")
             
             if result_parts:
                 return "\n".join(result_parts)
