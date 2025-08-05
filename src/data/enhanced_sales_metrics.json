@@ -1,0 +1,260 @@
+{
+  "last_updated": "2025-01-15",
+  "data_version": "1.0",
+  "company": "阪南ビジネスマシン株式会社",
+  "period": "2024年4月～2025年1月",
+  
+  "kpi_trends": {
+    "conversion_rate": {
+      "department_average": 0.15,
+      "individual": {
+        "高見": 0.14,
+        "辻川": 0.19,
+        "小濱": 0.12
+      },
+      "monthly_trend": {
+        "2024-04": 0.13,
+        "2024-05": 0.16,
+        "2024-06": 0.14,
+        "2024-07": 0.15,
+        "2024-08": 0.02,
+        "2024-09": 0.17,
+        "2024-10": 0.16,
+        "2024-11": 0.18,
+        "2024-12": 0.19,
+        "2025-01": 0.15
+      }
+    },
+    "avg_deal_size": {
+      "department_average": 280000,
+      "individual": {
+        "高見": 280000,
+        "辻川": 420000,
+        "小濱": 180000
+      },
+      "monthly_trend": {
+        "2024-04": 320000,
+        "2024-05": 280000,
+        "2024-06": 290000,
+        "2024-07": 270000,
+        "2024-08": 0,
+        "2024-09": 285000,
+        "2024-10": 295000,
+        "2024-11": 310000,
+        "2024-12": 340000,
+        "2025-01": 290000
+      }
+    },
+    "customer_retention_rate": {
+      "overall": 0.923,
+      "by_segment": {
+        "官公庁": 0.95,
+        "教育機関": 0.92,
+        "一般企業": 0.88
+      }
+    },
+    "new_customer_acquisition": {
+      "monthly_new_customers": {
+        "2024-04": 2,
+        "2024-05": 1,
+        "2024-06": 3,
+        "2024-07": 2,
+        "2024-08": 0,
+        "2024-09": 2,
+        "2024-10": 3,
+        "2024-11": 1,
+        "2024-12": 2,
+        "2025-01": 1
+      },
+      "acquisition_cost_per_customer": 180000,
+      "lifetime_value": 2400000
+    }
+  },
+
+  "activity_efficiency": {
+    "calls_per_deal": {
+      "department_average": 8.2,
+      "individual": {
+        "高見": 8.5,
+        "辻川": 6.2,
+        "小濱": 9.8
+      },
+      "industry_benchmark": 12.0,
+      "efficiency_rating": "above_average"
+    },
+    "visits_per_deal": {
+      "department_average": 3.4,
+      "individual": {
+        "高見": 3.2,
+        "辻川": 2.8,
+        "小濱": 4.1
+      },
+      "industry_benchmark": 4.5,
+      "efficiency_rating": "excellent"
+    },
+    "email_response_rate": {
+      "department_average": 0.68,
+      "individual": {
+        "高見": 0.72,
+        "辻川": 0.65,
+        "小濱": 0.67
+      }
+    },
+    "proposal_to_order_rate": {
+      "department_average": 0.42,
+      "individual": {
+        "高見": 0.45,
+        "辻川": 0.48,
+        "小濱": 0.35
+      }
+    }
+  },
+
+  "customer_satisfaction": {
+    "overall_satisfaction": 4.3,
+    "individual_ratings": {
+      "高見": 4.5,
+      "辻川": 4.2,
+      "小濱": 4.1
+    },
+    "satisfaction_by_service": {
+      "営業対応": 4.4,
+      "技術サポート": 4.1,
+      "アフターサービス": 4.3,
+      "価格競争力": 3.9
+    },
+    "customer_feedback": {
+      "positive_themes": [
+        "丁寧な対応",
+        "迅速なレスポンス",
+        "技術的専門知識",
+        "継続的フォロー"
+      ],
+      "improvement_areas": [
+        "価格競争力",
+        "新製品情報提供",
+        "提案書の分かりやすさ"
+      ]
+    }
+  },
+
+  "competitive_analysis": {
+    "market_share": {
+      "複合機": 0.18,
+      "RISO製品": 0.35,
+      "PC関連": 0.12
+    },
+    "win_rate_vs_competitors": {
+      "主要競合A": 0.62,
+      "主要競合B": 0.55,
+      "主要競合C": 0.71
+    },
+    "competitive_advantages": [
+      "官公庁との長期関係",
+      "RISO製品の専門知識",
+      "アフターサポート体制",
+      "地域密着型営業"
+    ],
+    "competitive_challenges": [
+      "価格競争への対応",
+      "新規市場開拓",
+      "デジタル化対応"
+    ]
+  },
+
+  "seasonal_patterns": {
+    "peak_months": ["3月", "9月", "12月"],
+    "slow_months": ["8月", "1月"],
+    "seasonal_factors": {
+      "3月": "年度末予算消化",
+      "9月": "下半期予算執行",
+      "12月": "年末駆け込み需要",
+      "8月": "夏季休暇影響",
+      "1月": "新年度予算待ち"
+    },
+    "seasonal_adjustments": {
+      "8月対策": "継続案件フォロー強化",
+      "1月対策": "新年度提案準備",
+      "繁忙期対策": "チーム連携強化"
+    }
+  },
+
+  "forecast_models": {
+    "revenue_prediction": {
+      "2025-02": {
+        "高見": 2400000,
+        "辻川": 3200000,
+        "小濱": 1800000
+      },
+      "2025-03": {
+        "高見": 2800000,
+        "辻川": 3800000,
+        "小濱": 2100000
+      },
+      "confidence_level": 0.78
+    },
+    "pipeline_conversion": {
+      "high_probability": 1800000,
+      "medium_probability": 2400000,
+      "low_probability": 800000,
+      "weighted_total": 2200000
+    }
+  },
+
+  "productivity_metrics": {
+    "daily_activity_averages": {
+      "visits_per_day": {
+        "高見": 2.8,
+        "辻川": 3.5,
+        "小濱": 2.2
+      },
+      "calls_per_day": {
+        "高見": 5.2,
+        "辻川": 6.8,
+        "小濱": 4.5
+      },
+      "emails_per_day": {
+        "高見": 3.8,
+        "辻川": 4.2,
+        "小濱": 3.1
+      }
+    },
+    "time_allocation": {
+      "顧客訪問": 0.35,
+      "電話営業": 0.25,
+      "提案書作成": 0.20,
+      "事務作業": 0.15,
+      "その他": 0.05
+    },
+    "productivity_improvement": {
+      "targets": {
+        "訪問効率": "10%向上",
+        "提案品質": "15%向上",
+        "事務効率": "20%向上"
+      },
+      "initiatives": [
+        "CRMシステム活用",
+        "モバイル対応強化",
+        "テンプレート標準化"
+      ]
+    }
+  },
+
+  "team_collaboration": {
+    "knowledge_sharing": {
+      "定期会議": "週1回",
+      "成功事例共有": "月1回",
+      "技術勉強会": "月2回"
+    },
+    "mutual_support": {
+      "案件協力": 8,
+      "技術サポート": 12,
+      "顧客紹介": 5
+    },
+    "team_goals": {
+      "売上目標": "前年比110%",
+      "顧客満足度": "4.5以上",
+      "新規開拓": "月平均3社"
+    }
+  }
+}

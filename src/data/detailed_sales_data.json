@@ -1,0 +1,275 @@
+{
+  "last_updated": "2025-01-15",
+  "data_version": "1.0",
+  "company": "阪南ビジネスマシン株式会社",
+  "department": "官需課",
+  
+  "daily_activities": {
+    "2025-01-15": {
+      "高見": {
+        "visits": 6,
+        "calls": 12,
+        "emails": 8,
+        "deals": 2,
+        "revenue_forecast": 180,
+        "customers_contacted": ["堺市消防局", "堺市長寿支援課", "岸和田市立消費生活センター"],
+        "focus_products": ["RISO GL7430", "複合機"],
+        "notes": "堺市消防局での複合機提案が進展。継続フォロー予定。"
+      },
+      "辻川": {
+        "visits": 8,
+        "calls": 15,
+        "emails": 12,
+        "deals": 3,
+        "revenue_forecast": 450,
+        "customers_contacted": ["高槻市役所", "守口市役所", "藤井寺市役所DX推進課"],
+        "focus_products": ["複合機21台", "PC345台", "複合機49台"],
+        "notes": "高槻市役所の複合機21台案件が順調。藤井寺市のPC345台案件も有望。"
+      },
+      "小濱": {
+        "visits": 5,
+        "calls": 10,
+        "emails": 6,
+        "deals": 1,
+        "revenue_forecast": 120,
+        "customers_contacted": ["大阪商業大学高等学校", "香ヶ丘リベルテ高等学校"],
+        "focus_products": ["RISO GL7430 3台", "継続案件"],
+        "notes": "大阪商業大学高等学校でのRISO GL7430 3台提案を継続中。"
+      }
+    },
+    "2025-01-14": {
+      "高見": {
+        "visits": 4,
+        "calls": 8,
+        "emails": 6,
+        "deals": 1,
+        "revenue_forecast": 120,
+        "customers_contacted": ["堺市立消費生活センター", "錦綾小学校"],
+        "focus_products": ["PC関連", "継続案件"],
+        "notes": "錦綾小学校の継続案件フォロー。"
+      },
+      "辻川": {
+        "visits": 6,
+        "calls": 10,
+        "emails": 8,
+        "deals": 2,
+        "revenue_forecast": 320,
+        "customers_contacted": ["守口市役所", "堺市消防局"],
+        "focus_products": ["複合機49台", "ノートPC"],
+        "notes": "守口市役所の複合機49台継続案件の調整中。"
+      },
+      "小濱": {
+        "visits": 3,
+        "calls": 7,
+        "emails": 4,
+        "deals": 1,
+        "revenue_forecast": 85,
+        "customers_contacted": ["大阪商業大学堺高等学校"],
+        "focus_products": ["RISO GL7430継続案件"],
+        "notes": "大阪商業大学堺高等学校のRISO継続案件メンテナンス。"
+      }
+    }
+  },
+
+  "customer_pipeline": {
+    "堺市消防局": {
+      "stage": "商談中",
+      "probability": 80,
+      "expected_value": 250,
+      "last_contact": "2025-01-15",
+      "next_action": "複合機デモ実施",
+      "担当者": "高見",
+      "products": ["複合機", "ノートPC", "モニター", "チェア"],
+      "notes": "継続案件多数。複合機更新時期が近づいている。"
+    },
+    "高槻市役所": {
+      "stage": "提案済み",
+      "probability": 60,
+      "expected_value": 180,
+      "last_contact": "2025-01-15",
+      "next_action": "正式見積もり提出",
+      "担当者": "辻川",
+      "products": ["複合機21台"],
+      "notes": "新規案件。予算承認待ち。"
+    },
+    "藤井寺市役所DX推進課": {
+      "stage": "商談中",
+      "probability": 75,
+      "expected_value": 400,
+      "last_contact": "2025-01-15",
+      "next_action": "技術仕様確認",
+      "担当者": "辻川",
+      "products": ["PC345台"],
+      "notes": "新規案件。DX推進予算での大型案件。"
+    },
+    "大阪商業大学高等学校": {
+      "stage": "検討中",
+      "probability": 50,
+      "expected_value": 150,
+      "last_contact": "2025-01-15",
+      "next_action": "予算確認",
+      "担当者": "小濱",
+      "products": ["RISO GL7430 3台"],
+      "notes": "継続顧客。年度予算での購入検討中。"
+    },
+    "守口市役所": {
+      "stage": "継続中",
+      "probability": 90,
+      "expected_value": 300,
+      "last_contact": "2025-01-14",
+      "next_action": "定期メンテナンス",
+      "担当者": "辻川",
+      "products": ["複合機49台"],
+      "notes": "継続案件。安定した収益源。"
+    }
+  },
+
+  "performance_metrics": {
+    "weekly_summary": {
+      "week_of": "2025-01-13",
+      "total_visits": {
+        "高見": 18,
+        "辻川": 25,
+        "小濱": 12
+      },
+      "total_calls": {
+        "高見": 35,
+        "辻川": 42,
+        "小濱": 28
+      },
+      "deals_in_progress": {
+        "高見": 5,
+        "辻川": 8,
+        "小濱": 3
+      },
+      "conversion_rates": {
+        "高見": 0.14,
+        "辻川": 0.19,
+        "小濱": 0.12
+      }
+    },
+    "monthly_targets": {
+      "2025-01": {
+        "高見": {
+          "target": 2100,
+          "current_progress": 300,
+          "progress_rate": 0.14
+        },
+        "辻川": {
+          "target": 2800,
+          "current_progress": 770,
+          "progress_rate": 0.28
+        },
+        "小濱": {
+          "target": 1600,
+          "current_progress": 205,
+          "progress_rate": 0.13
+        }
+      }
+    }
+  },
+
+  "activity_efficiency": {
+    "calls_per_deal": {
+      "高見": 8.5,
+      "辻川": 6.2,
+      "小濱": 9.8
+    },
+    "visits_per_deal": {
+      "高見": 3.2,
+      "辻川": 2.8,
+      "小濱": 4.1
+    },
+    "avg_deal_size": {
+      "高見": 280000,
+      "辻川": 420000,
+      "小濱": 180000
+    },
+    "pipeline_velocity": {
+      "高見": "3.2週間",
+      "辻川": "2.8週間", 
+      "小濱": "4.1週間"
+    }
+  },
+
+  "customer_interaction_history": {
+    "堺市消防局": {
+      "last_contact": "2025-01-15",
+      "interaction_type": "visit",
+      "outcome": "positive",
+      "担当者": "高見",
+      "contact_frequency": "週2回",
+      "relationship_strength": "strong",
+      "notes": "長期継続顧客。新製品への関心高い。"
+    },
+    "高槻市役所": {
+      "last_contact": "2025-01-15", 
+      "interaction_type": "visit",
+      "outcome": "promising",
+      "担当者": "辻川",
+      "contact_frequency": "週1回",
+      "relationship_strength": "developing",
+      "notes": "新規案件。決裁者との関係構築中。"
+    },
+    "藤井寺市役所DX推進課": {
+      "last_contact": "2025-01-15",
+      "interaction_type": "visit",
+      "outcome": "very_positive",
+      "担当者": "辻川",
+      "contact_frequency": "週2回",
+      "relationship_strength": "strong",
+      "notes": "DX予算での大型案件。技術担当者との関係良好。"
+    },
+    "大阪商業大学高等学校": {
+      "last_contact": "2025-01-15",
+      "interaction_type": "call",
+      "outcome": "neutral",
+      "担当者": "小濱",
+      "contact_frequency": "月2回",
+      "relationship_strength": "stable",
+      "notes": "継続顧客。予算時期待ち。"
+    }
+  },
+
+  "product_focus_analysis": {
+    "RISO": {
+      "total_proposals": 8,
+      "success_rate": 0.62,
+      "avg_deal_size": 180000,
+      "key_customers": ["大阪商業大学高等学校", "大阪商業大学堺高等学校", "株式会社エヌ"],
+      "market_trend": "安定"
+    },
+    "複合機": {
+      "total_proposals": 12,
+      "success_rate": 0.75,
+      "avg_deal_size": 350000,
+      "key_customers": ["高槻市役所", "守口市役所", "堺市消防局"],
+      "market_trend": "成長"
+    },
+    "PC関連": {
+      "total_proposals": 6,
+      "success_rate": 0.50,
+      "avg_deal_size": 280000,
+      "key_customers": ["藤井寺市役所DX推進課", "堺市長寿支援課"],
+      "market_trend": "変動"
+    }
+  },
+
+  "team_insights": {
+    "strengths": {
+      "辻川": "大型案件の獲得力。官公庁との関係構築に長けている。",
+      "高見": "継続顧客との安定した関係維持。フォローアップが丁寧。",
+      "小濱": "教育機関との関係に強み。RISO製品の専門知識豊富。"
+    },
+    "improvement_areas": {
+      "辻川": "小型案件への注力でベース向上の余地あり。",
+      "高見": "新規開拓への積極性向上が期待される。",
+      "小濱": "商談期間の短縮と効率化が課題。"
+    },
+    "collaboration_opportunities": {
+      "官公庁案件": "辻川の経験を高見・小濱と共有",
+      "教育機関案件": "小濱の専門知識をチーム全体で活用",
+      "継続顧客管理": "高見のフォローアップ手法をチーム標準化"
+    }
+  }
+}

@@ -9,8 +9,9 @@ class N8NConnector:
 
     def execute_task(self, task_description: str) -> str:
         """n8nのWebhookにタスク実行を依頼する"""
-        if not self.webhook_url:
-            return "n8n連携用のURLが設定されていません。"
+        # N8N URL チェック
+        if not self.webhook_url or self.webhook_url == "disabled" or "your-n8n-instance" in self.webhook_url:
+            return "n8n連携は現在無効です。手動でタスクを実行してください。"
 
         # n8nに送信するデータペイロード
         payload = {
@@ -33,5 +34,9 @@ class N8NConnector:
             else:
                 return f"❌ タスク実行でエラーが発生しました。(ステータスコード: {response.status_code})"
 
+        except requests.exceptions.ConnectionError:
+            return "❌ n8nサーバーに接続できません。URLを確認してください。"
+        except requests.exceptions.Timeout:
+            return "❌ n8nサーバーからの応答がタイムアウトしました。"
         except requests.exceptions.RequestException as e:
-            return f"❌ n8nとの連携中にエラーが発生しました: {e}"
+            return f"❌ n8nとの連携中にエラーが発生しました: {str(e)[:100]}..."

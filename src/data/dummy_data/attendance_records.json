@@ -1,0 +1,222 @@
+[
+  {
+    "record_id": "ATT-2024-001",
+    "employee_id": "EMP-2024-0001",
+    "name": "田中 太郎",
+    "department": "営業部",
+    "month": "2024-07",
+    "work_days": 22,
+    "total_hours": 184.5,
+    "overtime_hours": 25.5,
+    "late_arrivals": 2,
+    "early_departures": 0,
+    "absences": 1,
+    "paid_leave_used": 1,
+    "sick_leave_used": 0,
+    "attendance_rate": 95.5,
+    "punctuality_rate": 90.9,
+    "overtime_breakdown": {
+      "weekday_overtime": 22.5,
+      "weekend_overtime": 3.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-002",
+    "employee_id": "EMP-2024-0002",
+    "name": "佐藤 花子", 
+    "department": "営業部",
+    "month": "2024-07",
+    "work_days": 21,
+    "total_hours": 188.0,
+    "overtime_hours": 35.0,
+    "late_arrivals": 0,
+    "early_departures": 1,
+    "absences": 0,
+    "paid_leave_used": 1,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 95.2,
+    "overtime_breakdown": {
+      "weekday_overtime": 30.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-003",
+    "employee_id": "EMP-2024-0003",
+    "name": "鈴木 一郎",
+    "department": "経理部",
+    "month": "2024-07", 
+    "work_days": 22,
+    "total_hours": 176.0,
+    "overtime_hours": 20.0,
+    "late_arrivals": 1,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 0,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 95.5,
+    "overtime_breakdown": {
+      "weekday_overtime": 18.0,
+      "weekend_overtime": 2.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-004",
+    "employee_id": "EMP-2024-0004",
+    "name": "高橋 美咲",
+    "department": "経理部",
+    "month": "2024-07",
+    "work_days": 21,
+    "total_hours": 192.0,
+    "overtime_hours": 40.0,
+    "late_arrivals": 0,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 1,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 100.0,
+    "overtime_breakdown": {
+      "weekday_overtime": 35.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-005",
+    "employee_id": "EMP-2024-0005",
+    "name": "伊藤 健太",
+    "department": "人事部",
+    "month": "2024-07",
+    "work_days": 22,
+    "total_hours": 171.0,
+    "overtime_hours": 15.0,
+    "late_arrivals": 0,
+    "early_departures": 1,
+    "absences": 0,
+    "paid_leave_used": 0,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 95.5,
+    "overtime_breakdown": {
+      "weekday_overtime": 15.0,
+      "weekend_overtime": 0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-006",
+    "employee_id": "EMP-2024-0006", 
+    "name": "渡辺 由美",
+    "department": "人事部",
+    "month": "2024-07",
+    "work_days": 20,
+    "total_hours": 180.0,
+    "overtime_hours": 30.0,
+    "late_arrivals": 1,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 2,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 95.0,
+    "overtime_breakdown": {
+      "weekday_overtime": 25.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-007",
+    "employee_id": "EMP-2024-0007",
+    "name": "小林 大輔",
+    "department": "総務部",
+    "month": "2024-07",
+    "work_days": 21,
+    "total_hours": 166.0,
+    "overtime_hours": 10.0,
+    "late_arrivals": 3,
+    "early_departures": 1,
+    "absences": 1,
+    "paid_leave_used": 0,
+    "sick_leave_used": 1,
+    "attendance_rate": 91.3,
+    "punctuality_rate": 81.8,
+    "overtime_breakdown": {
+      "weekday_overtime": 10.0,
+      "weekend_overtime": 0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-008",
+    "employee_id": "EMP-2024-0008",
+    "name": "森田 智子",
+    "department": "総務部", 
+    "month": "2024-07",
+    "work_days": 22,
+    "total_hours": 181.0,
+    "overtime_hours": 25.0,
+    "late_arrivals": 1,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 0,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 95.5,
+    "overtime_breakdown": {
+      "weekday_overtime": 20.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-009",
+    "employee_id": "EMP-2024-0009", 
+    "name": "中村 裕子",
+    "department": "IT部",
+    "month": "2024-07",
+    "work_days": 22,
+    "total_hours": 191.0,
+    "overtime_hours": 35.0,
+    "late_arrivals": 0,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 0,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 100.0,
+    "overtime_breakdown": {
+      "weekday_overtime": 30.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  },
+  {
+    "record_id": "ATT-2024-010",
+    "employee_id": "EMP-2024-0010",
+    "name": "松本 和也",
+    "department": "IT部",
+    "month": "2024-07",  
+    "work_days": 21,
+    "total_hours": 197.0,
+    "overtime_hours": 45.0,
+    "late_arrivals": 0,
+    "early_departures": 0,
+    "absences": 0,
+    "paid_leave_used": 1,
+    "sick_leave_used": 0,
+    "attendance_rate": 100.0,
+    "punctuality_rate": 100.0,
+    "overtime_breakdown": {
+      "weekday_overtime": 40.0,
+      "weekend_overtime": 5.0,
+      "holiday_overtime": 0
+    }
+  }
+]

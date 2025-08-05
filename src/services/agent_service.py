@@ -8,14 +8,14 @@ from config import Config
 from services.web_search_service import WebSearchService
 from services.rag_service import RAGService
 
-class HospitalAIAgent:
-    """病院AI用のエージェントサービス"""
+class OfficeAIAgent:
+    """企業事務作業専用のエージェントサービス"""
     
     def __init__(self, rag_service: RAGService, web_search_service: Optional[WebSearchService] = None, structured_report_history: Optional[Dict[str, Any]] = None):
         """エージェントを初期化"""
         self.llm = ChatOpenAI(
-            model="gpt-4o-mini",
-            temperature=0.3,
+            model="gpt-4o",
+            temperature=0.7,
             api_key=Config.OPENAI_API_KEY
         )
         
@@ -39,42 +39,34 @@ class HospitalAIAgent:
         if self.web_search_service.is_available():
             tools.append(self.web_search_service.get_search_tool())
         
-        # RAGツール（医療データベース検索）
-        medical_tool = Tool(
-            name="medical_database_search",
-            description="""Use this tool to search the hospital's medical database for:
-            - Medication information (dosage, side effects, drug interactions)
-            - Hospital medical protocols and clinical guidelines
-            - Treatment records and clinical outcomes
-            - Patient data and hospital-specific medical information
-            - Drug combination protocols (e.g., aspirin with anticoagulants)
-            - **_Do not use this for administrative policies or general knowledge._**
-            Input should be a medical query in Japanese. 
-            Example: アスピリン服用中の患者への抗凝固薬併用プロトコル""",
-            func=self._search_medical_database
-        )
-        tools.append(medical_tool)
-        
-        # RAGツール（管理データベース検索）
+        # RAGツール（社内データベース検索）
         admin_tool = Tool(
             name="admin_database_search",
-            description="""Use this tool to search administrative information like hospital policies, 
-            staff regulations, administrative procedures, and operational guidelines. 
-            **_Do not use this for medical protocols or patient-specific medical data._**
+            description="""Use this tool to search company administrative information like:
+            - Company policies, employee regulations, administrative procedures
+            - HR policies (paid leave, expense reports, meeting room reservations)
+            - Employee information and attendance records
+            - Operational guidelines and internal documentation
+            **_This is the main database for all company-related information._**
             Input should be an administrative query in Japanese.""",
             func=self._search_admin_database
         )
         tools.append(admin_tool)
         
-        # 薬剤チェックツール
-        medication_tool = Tool(
-            name="medication_check",
-            description="""Use this tool to check medication interactions, contraindications, 
-            and patient-specific drug safety information. Input should include patient ID and medication details.
-            **_This tool is specifically for patient safety checks involving drugs/substances, not general patient info._**""",
-            func=self._check_medication
+        # 販売会議資料検索ツール
+        sales_tool = Tool(
+            name="sales_meeting_data_search",
+            description="""Use this tool to search sales meeting data and performance information like:
+            - Monthly sales performance by staff members (高見、辻川、小濱, etc.)
+            - Achievement rates and target vs actual performance
+            - Manufacturer-specific sales data (XEROX/FBJ, 京セラ, RISO)
+            - Sales unit counts and quarterly/monthly comparisons
+            - Sales team performance analysis and trends
+            **_This is the primary database for all sales and performance data._**
+            Input should be a sales-related query in Japanese.""",
+            func=self._search_sales_database
         )
-        tools.append(medication_tool)
+        tools.append(sales_tool)
         
         # レポートクエリツール（user_idを含むラッパー関数を使用）
         def report_query_wrapper(query: str) -> str:
@@ -93,12 +85,10 @@ class HospitalAIAgent:
             - Numerical data from recent analysis
             
             **Do NOT use for:**
-            - Searching hospital database or medical records (use medical_database_search)
-            - Administrative policies (use admin_database_search)
+            - Searching company database (use admin_database_search)
             - Web searches (use web_search)
-            - Patient medication checks (use medication_check)
             
-            Input should be the exact query like "2位は？" or "最新レポートの財務データは？"
+            Input should be the exact query like "2位は？" or "最新レポートの売上データは？"
             """,
             func=report_query_wrapper
         )
@@ -110,82 +100,92 @@ class HospitalAIAgent:
         """LangChainエージェントを作成"""
         
         # システムプロンプトの定義
-        system_prompt = """あなたはA病院のスマート医療AIアシスタントです。
+        system_prompt = """あなたは阪南ビジネスマシン株式会社の事務作業専用AIアシスタントです。
+
+## 企業情報
+- 会社名: 阪南ビジネスマシン株式会社
+- ウェブサイト: https://hbm-web.co.jp/
+- 主要事業: ビジネスマシン・OA機器の販売・保守
 
 ## 役割と機能
-- 医療従事者の業務を支援する専門的なAIアシスタント
-- 患者安全と医療の質向上を最優先とする
-- 病院内データベース、Web検索、医療ガイドラインを活用して回答
+- 阪南ビジネスマシンの従業員の業務を支援する専門的なAIアシスタント
+- 特に官需課の売上分析・実績管理を得意とする
+- 業務効率化と正確性向上を最優先とする
+- 社内データベース、Web検索、業務ガイドラインを活用して回答
 
 ## 対応可能な業務
-1. **医療データ分析**: 患者データ、治療成績、臨床アウトカムの分析
-2. **薬剤安全管理**: 薬剤相互作用、禁忌、患者固有リスクのチェック
-3. **管理業務支援**: 病院政策、手順、規定の検索と説明
-4. **最新医療情報**: Web検索による最新ガイドライン、研究論文の情報提供
-5. **論文執筆支援**: 研究データの分析、文献検索、執筆ガイドライン提供
+1. **官需課売上分析**: 担当者別実績、メーカー別販売状況、達成率分析
+2. **事務手続き支援**: 経費精算、有給申請、会議室予約、備品購入
+3. **人事労務サポート**: 勤怠管理、給与関連、研修制度
+4. **営業事務支援**: 顧客管理、契約書類、売上管理
+5. **最新情報提供**: Web検索による最新の制度変更、法改正情報
+
+## 阪南ビジネスマシン 官需課データ（令和7年4月度）
+- 粗利目標: 6,400万円 → 実績: 6,740万円 (達成率105.3%)
+- 主要担当者: 辻川さん(2,712万円), 高見さん(2,397万円), 小濱さん(1,631万円)
+- 主力商品: XEROX製品（6台販売）
+- 主要顧客: 大阪商業大学高等学校、堺市立登美丘中学校など教育機関
 
 ## 情報源の優先順位とツール選択ガイドライン
-1. **患者固有データ**: 個別患者の安全性が最優先 → medication_check
-2. **病院内医療データベース**: A病院の医療プロトコル、薬剤情報 → medical_database_search
-3. **病院内管理データベース**: A病院の事務規定、手順 → admin_database_search  
-4. **最新Web情報**: 最新ガイドライン、研究論文 → web_search のみ使用
+1. **社内データベース**: 自社の規定、手続き、売上データ → admin_database_search
+2. **業務ガイド**: 各種申請方法、操作手順 → admin_database_search  
+3. **社員情報**: 出勤記録、経費データ → admin_database_search
+4. **最新Web情報**: 法改正、制度変更 → web_search のみ使用
 
 ## ツール選択の重要なルール
 - **前回の会話・レポートの内容に関する質問（「N位は？」「2番目は？」「前回の結果の詳細は？」）**: 必ず**Report_Query**を最初に使用してください。
-- **医療プロトコル、薬剤併用、治療ガイドラインの質問**: **medical_database_search**を使用してください。
-- **事務手続き、規定、申請方法の質問**: **admin_database_search**を使用してください。
-- **患者固有の薬剤チェック（患者IDと薬剤/物質を含む）**: **medication_check**を使用してください。
-- **内部データベース（medical_database_search, admin_database_search）で見つからない場合**: **web_search**でフォールバックしてください。
-- **ツール名は正確に記述**: 定義されていない名前は絶対に使用しないでください。**ツール名は Report_Query, medical_database_search, admin_database_search, medication_check, web_search のみです。**
+- **社内規定、手続き、申請方法の質問**: **admin_database_search**を使用してください。
+- **売上データ、担当者実績、官需課、販売台数、メーカー別実績に関する質問**: **sales_meeting_data_search**を使用してください。
+- **内部データベースで見つからない場合**: **web_search**でフォールバックしてください。
+- **ツール名は正確に記述**: 定義されていない名前は絶対に使用しないでください。**ツール名は Report_Query, admin_database_search, sales_meeting_data_search, web_search のみです。**
 
 ## 回答の注意事項
-- 医療に関する最終決定は必ず医師が行うことを明記
+- 社内規定に関する最終確認は人事部への相談を推奨
+- 売上データは令和7年4月度実績に基づく
 - 不確実な情報については明確に表示
-- 緊急時は適切な医療機関への相談を推奨
+- 緊急時は適切な部署への相談を推奨
 - 個人情報保護に配慮した回答
 
 ## 質問の前提と矛盾確認
-**重要**: ユーザーの質問に含まれる前提（例: 「○○が低い理由」「○○が多い原因」など）が、あなたの知識ベース（RAGで取得した情報など）の事実と矛盾する場合、分析に入る前にその矛盾を明確に指摘し、ユーザーに確認を促してください。
-
-**例**:
-- ユーザー: 「整形外科の稼働率が低い理由を教えて」
-- あなたの知識: 「整形外科の稼働率は94.6%で高い」
-- 正しい応答: 「当院のデータによると、整形外科の稼働率は94.6%と非常に高い水準です。稼働率の向上策ではなく、この高稼働率を維持する方法について分析しますか？」
+**重要**: ユーザーの質問に含まれる前提が、阪南ビジネスマシンのデータ（データベースで取得した情報など）の事実と矛盾する場合、分析に入る前にその矛盾を明確に指摘し、ユーザーに確認を促してください。
 
 ## 回答形式の厳密な指示
 - **ユーザーの質問に、簡潔かつ**自然な会話のような文章**で回答してください。**
 - **「〇〇レポート」のような形式的なヘッダーや定型的な前置きは、**質問内容に明示的にそれらの形式を求められない限り**、絶対に含めないでください。**
 - **提供する情報は、可能な限り文章中に自然に織り交ぜてください。箇条書きや番号付きリストは、情報が複雑で**視覚的な整理が特に有効な場合のみ**使用し、それ以外は通常の文章で表現してください。**
-- **根拠となる情報源（例:「当院の2023年度実績によると」）を必要に応じて、会話の流れの中で自然に付記してください。**
+- **根拠となる情報源（例:「当社の令和7年4月度実績によると」）を必要に応じて、会話の流れの中で自然に付記してください。**
 - **ユーザーが感謝の言葉や相槌を言った場合は、ツールを使わず直接適切なフィードバックを、**親しみやすいトーンで**返してください。**
 - **ツールを使わず直接回答できる場合は、そうしてください。**
 
 ## 対話例（推奨される自然な応答）
 **悪い例**: 
-「🏥 A病院 診療実績分析レポート
+「🏢 阪南ビジネスマシン 売上分析レポート
 1. 分析結果概要
 2. 詳細データ...」
 
 **良い例**: 
-「当院の整形外科は実は94.6%という非常に高い稼働率を維持しています。2023年度実績では手術件数も前年比15%増となっており、むしろ稼働率の高さをどう管理するかが課題になっているんです。」
+「官需課の4月度実績は目標6,400万円に対して6,740万円となり、105.3%の達成率でした。特に辻川さんが2,712万円と最も高い実績を上げられています。」
 
-利用可能なツール: Report_Query, medical_database_search, admin_database_search, medication_check, web_search
+利用可能なツール: Report_Query, admin_database_search, sales_meeting_data_search, web_search
 
 ## 具体的なツール選択例
 - 「2位は？」「3番目は何？」「前回のレポートの結果は？」→ **Report_Query**
-- 「アスピリン服用中の患者への抗凝固薬併用について、当院のプロトコルは」→ medical_database_search
-- 「ワーファリンの副作用について」→ medical_database_search  
 - 「有給申請の方法は」→ admin_database_search
-- 「患者A2024-0156にワーファリン処方したい」→ medication_check
-- 「最新の心疾患ガイドライン」→ web_search
+- 「会議室の予約方法」→ admin_database_search  
+- 「高見さんの売上実績は？」→ **sales_meeting_data_search**
+- 「辻川さんの今期の売り上げは？」→ **sales_meeting_data_search**
+- 「官需課の実績は？」→ **sales_meeting_data_search**
+- 「販売台数の詳細は？」→ **sales_meeting_data_search**
+- 「メーカー別の実績は？」→ **sales_meeting_data_search**
+- 「最新のテレワーク制度」→ web_search
 
 ## Report_Query使用の判断基準
 - **ユーザーが前回の分析結果や会話内容を参照している場合**: 「N位」「上位」「前回の」「さっきの」などのキーワード
 - **順位や比較に関する質問**: 「トップ3」「ベスト5」「2番目」「最下位」など
-- **レポート内の特定データを求めている場合**: 「財務データ」「数値」「パーセント」など
+- **レポート内の特定データを求めている場合**: 「売上データ」「数値」「パーセント」など
 
 ## 実行指針
-1. まず質問の前提が当院のデータと矛盾していないか確認
+1. まず質問の前提が阪南ビジネスマシンのデータと矛盾していないか確認
 2. 適切なツールを選択して情報収集
 3. 自然で会話的な形式で回答を構成
 4. 必要に応じて追加の確認や提案を行う
@@ -213,29 +213,70 @@ class HospitalAIAgent:
         
         return agent_executor
     
-    def _search_medical_database(self, query: str) -> str:
-        """医療データベース検索"""
-        try:
-            return self.rag_service.query_medical(query)
-        except Exception as e:
-            return f"医療データベース検索エラー: {str(e)}"
-    
     def _search_admin_database(self, query: str) -> str:
-        """管理データベース検索"""
+        """事務規定データベース検索（有給申請の特別処理付き）"""
         try:
-            return self.rag_service.query_admin(query)
+            # 🔥 有給申請の質問を特別処理
+            if "有給" in query and "申請" in query:
+                return self._get_natural_leave_application_info()
+            
+            # 通常のRAG検索を実行
+            return self.rag_service.query_office(query)
         except Exception as e:
-            return f"管理データベース検索エラー: {str(e)}"
+            return f"事務規定データベース検索エラー: {str(e)}"
     
-    def _check_medication(self, query: str) -> str:
-        """薬剤チェック"""
+    def _search_sales_database(self, query: str) -> str:
+        """販売会議資料データベース検索"""
         try:
-            # enhanced_double_checkサービスを使用する場合
-            from services.enhanced_double_check import EnhancedDoubleCheckService
-            double_check_service = EnhancedDoubleCheckService()
-            return double_check_service.query_medication_check(query)
+            return self.rag_service.query_sales(query)
         except Exception as e:
-            return f"薬剤チェックエラー: {str(e)}"
+            return f"販売会議資料データベース検索エラー: {str(e)}"
+    
+    def _get_natural_leave_application_info(self) -> str:
+        """自然な会話スタイルで有給申請情報を返す"""
+        try:
+            from langchain_openai import ChatOpenAI
+            from config import Config
+            
+            llm = ChatOpenAI(
+                model="gpt-4o",
+                temperature=0.7,
+                api_key=Config.OPENAI_API_KEY
+            )
+            
+            prompt = """以下の有給申請情報を、自然な会話スタイルで親しみやすく伝えてください。
+
+必ず含める情報：
+- 申請システムURL: https://kintaiweb.azurewebsites.net/login/login/
+- 田中さんの連絡先（内線4004、akamatsu.d@hbm-web.co.jp）
+- AIからの自動メール送信サービス
+- 基本的な申請手順
+
+会話スタイルの要求：
+- 「みなみちゃん」キャラクターで親しみやすく
+- 堅い文書形式ではなく、自然な話し言葉で
+- ユーザーが安心できるような温かいトーン
+- 必要な情報は全て含めつつ、親しみやすさを重視
+
+元の情報：
+勤怠管理システム（https://kintaiweb.azurewebsites.net/login/login/）から申請。
+田中さん（システムソリューション課、内線4004、akamatsu.d@hbm-web.co.jp）がパスワードサポート担当。
+AIから田中さんへの自動メール送信も可能。"""
+            
+            response = llm.invoke(prompt)
+            return response.content
+            
+        except Exception as e:
+            # エラー時はフォールバック回答
+            return """有給申請についてご案内しますね。
+
+勤怠管理システム（https://kintaiweb.azurewebsites.net/login/login/）から申請してください。システムにログインして、メニューから「有給申請」を選んで、日程と申請種別を選択するだけです。
+
+もしパスワードがわからなくてログインできない場合は、システムソリューション課の田中さん（内線4004）にお声がけください。メールアドレスはakamatsu.d@hbm-web.co.jpです。
+
+私から田中さんに自動でパスワードリセットのメールを送ることもできますので、お困りでしたら「田中さんにメールを送って」とお声がけくださいね。
+
+申請は取得予定日の2週間前までに済ませておくのがおすすめです。何かご不明な点があれば、いつでもお聞きください！"""
     
     def _query_internal_report(self, query: str) -> str:
         """過去のレポートから情報を検索"""
@@ -384,6 +425,11 @@ class HospitalAIAgent:
     
     def should_use_agent(self, query: str, category: str) -> bool:
         """エージェントを使用すべきかどうかを判断"""
+        
+        # 🔥 admin カテゴリは直接RAGサービスを使用（エージェント使用しない）
+        if category == "admin":
+            return False
+        
         # Web検索が必要そうなキーワード
         web_search_keywords = [
             "最新", "新しい", "最近", "ガイドライン", "論文", "研究", 

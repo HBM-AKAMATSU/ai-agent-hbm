@@ -1,0 +1,327 @@
+{
+  "last_updated": "2025-01-15",
+  "data_version": "1.0",
+  "company": "阪南ビジネスマシン株式会社",
+  "tracking_period": "2024年4月～2025年1月",
+  
+  "customer_interactions": {
+    "堺市消防局": {
+      "customer_type": "官公庁",
+      "担当者": "高見",
+      "relationship_start": "2020-03-15",
+      "total_interactions": 156,
+      "interaction_timeline": {
+        "2025-01-15": {
+          "type": "visit",
+          "duration": 90,
+          "purpose": "複合機更新提案",
+          "outcome": "positive",
+          "next_action": "デモ実施予定",
+          "notes": "新製品への関心高い。予算確保済み。"
+        },
+        "2025-01-10": {
+          "type": "call",
+          "duration": 25,
+          "purpose": "フォローアップ",
+          "outcome": "neutral",
+          "next_action": "資料送付",
+          "notes": "年度末予算での検討を継続。"
+        },
+        "2025-01-08": {
+          "type": "email",
+          "purpose": "提案書送付",
+          "outcome": "positive",
+          "response_time": "2時間",
+          "notes": "迅速な返信あり。前向きなコメント。"
+        }
+      },
+      "contact_frequency": "週2回",
+      "preferred_contact_method": "visit",
+      "decision_makers": ["総務課長", "消防署長"],
+      "relationship_strength": "strong",
+      "satisfaction_rating": 4.5,
+      "revenue_history": {
+        "2024": 2800000,
+        "2023": 2400000,
+        "2022": 2100000
+      },
+      "products_of_interest": ["複合機", "ノートPC", "モニター"],
+      "seasonal_patterns": "年度末に大型購入",
+      "communication_style": "formal",
+      "key_success_factors": ["継続的フォロー", "技術的専門性", "迅速な対応"]
+    },
+
+    "高槻市役所": {
+      "customer_type": "官公庁",
+      "担当者": "辻川",
+      "relationship_start": "2024-09-12",
+      "total_interactions": 28,
+      "interaction_timeline": {
+        "2025-01-15": {
+          "type": "visit",
+          "duration": 120,
+          "purpose": "複合機21台提案",
+          "outcome": "very_positive",
+          "next_action": "正式見積もり提出",
+          "notes": "決裁者との面談実現。予算承認間近。"
+        },
+        "2025-01-12": {
+          "type": "call",
+          "duration": 35,
+          "purpose": "技術仕様確認",
+          "outcome": "positive",
+          "next_action": "詳細資料準備",
+          "notes": "技術的要件の詳細確認完了。"
+        },
+        "2025-01-09": {
+          "type": "email",
+          "purpose": "資料送付",
+          "outcome": "positive",
+          "response_time": "1日",
+          "notes": "追加資料の要求あり。関心度高い。"
+        }
+      },
+      "contact_frequency": "週1回",
+      "preferred_contact_method": "visit",
+      "decision_makers": ["DX推進課長", "総務部長"],
+      "relationship_strength": "developing",
+      "satisfaction_rating": 4.2,
+      "revenue_potential": 18000000,
+      "products_of_interest": ["複合機21台", "周辺機器"],
+      "seasonal_patterns": "新年度予算執行",
+      "communication_style": "formal",
+      "key_success_factors": ["技術的詳細説明", "コスト効率性", "導入実績"]
+    },
+
+    "藤井寺市役所DX推進課": {
+      "customer_type": "官公庁",
+      "担当者": "辻川",
+      "relationship_start": "2024-11-05",
+      "total_interactions": 22,
+      "interaction_timeline": {
+        "2025-01-15": {
+          "type": "visit",
+          "duration": 150,
+          "purpose": "PC345台技術仕様確認",
+          "outcome": "excellent",
+          "next_action": "PoC提案",
+          "notes": "DX予算での大型案件。技術責任者と良好な関係。"
+        },
+        "2025-01-13": {
+          "type": "call",
+          "duration": 45,
+          "purpose": "セキュリティ要件確認",
+          "outcome": "positive",
+          "next_action": "セキュリティ資料準備",
+          "notes": "セキュリティ要件が厳格。詳細対応が必要。"
+        },
+        "2025-01-11": {
+          "type": "email",
+          "purpose": "技術資料送付",
+          "outcome": "positive",
+          "response_time": "4時間",
+          "notes": "技術的質問への詳細回答。高評価。"
+        }
+      },
+      "contact_frequency": "週2回",
+      "preferred_contact_method": "visit",
+      "decision_makers": ["DX推進課長", "IT担当者", "副市長"],
+      "relationship_strength": "strong",
+      "satisfaction_rating": 4.4,
+      "revenue_potential": 40000000,
+      "products_of_interest": ["PC345台", "ネットワーク機器", "セキュリティソフト"],
+      "seasonal_patterns": "DX予算年度内執行",
+      "communication_style": "technical",
+      "key_success_factors": ["技術的専門性", "セキュリティ対応", "導入支援"]
+    },
+
+    "大阪商業大学高等学校": {
+      "customer_type": "教育機関",
+      "担当者": "小濱",
+      "relationship_start": "2018-04-10",
+      "total_interactions": 189,
+      "interaction_timeline": {
+        "2025-01-15": {
+          "type": "call",
+          "duration": 30,
+          "purpose": "RISO GL7430 3台提案",
+          "outcome": "neutral",
+          "next_action": "予算確認",
+          "notes": "年度予算での購入検討中。時期は未定。"
+        },
+        "2025-01-08": {
+          "type": "visit",
+          "duration": 60,
+          "purpose": "機器メンテナンス",
+          "outcome": "positive",
+          "next_action": "継続サポート",
+          "notes": "現行機器の調子良好。満足度高い。"
+        },
+        "2025-01-05": {
+          "type": "email",
+          "purpose": "新年挨拶",
+          "outcome": "positive",
+          "response_time": "1日",
+          "notes": "継続的な関係維持。信頼関係良好。"
+        }
+      },
+      "contact_frequency": "月2回",
+      "preferred_contact_method": "call",
+      "decision_makers": ["事務長", "総務主任"],
+      "relationship_strength": "stable",
+      "satisfaction_rating": 4.3,
+      "revenue_history": {
+        "2024": 1200000,
+        "2023": 1500000,
+        "2022": 1800000
+      },
+      "products_of_interest": ["RISO GL7430", "消耗品"],
+      "seasonal_patterns": "年度予算での購入",
+      "communication_style": "friendly",
+      "key_success_factors": ["継続的関係", "教育機関理解", "コスト意識"]
+    },
+
+    "守口市役所": {
+      "customer_type": "官公庁",
+      "担当者": "辻川",
+      "relationship_start": "2019-07-20",
+      "total_interactions": 98,
+      "interaction_timeline": {
+        "2025-01-14": {
+          "type": "visit",
+          "duration": 75,
+          "purpose": "複合機49台定期点検",
+          "outcome": "positive",
+          "next_action": "継続サポート",
+          "notes": "安定稼働中。継続契約順調。"
+        },
+        "2025-01-07": {
+          "type": "call",
+          "duration": 20,
+          "purpose": "消耗品注文",
+          "outcome": "positive",
+          "next_action": "配送手配",
+          "notes": "定期注文。スムーズな取引。"
+        }
+      },
+      "contact_frequency": "月1回",
+      "preferred_contact_method": "visit",
+      "decision_makers": ["総務部長", "情報システム課長"],
+      "relationship_strength": "stable",
+      "satisfaction_rating": 4.1,
+      "revenue_history": {
+        "2024": 3600000,
+        "2023": 3400000,
+        "2022": 3200000
+      },
+      "products_of_interest": ["複合機49台", "保守サービス", "消耗品"],
+      "seasonal_patterns": "安定した継続収益",
+      "communication_style": "business",
+      "key_success_factors": ["安定したサービス", "コスト管理", "継続対応"]
+    },
+
+    "株式会社エヌ": {
+      "customer_type": "一般企業",
+      "担当者": "小濱",
+      "relationship_start": "2021-02-18",
+      "total_interactions": 45,
+      "interaction_timeline": {
+        "2025-01-12": {
+          "type": "visit",
+          "duration": 45,
+          "purpose": "RISO MH635提案",
+          "outcome": "positive",
+          "next_action": "デモ実施",
+          "notes": "現行機の更新時期。費用対効果重視。"
+        },
+        "2025-01-06": {
+          "type": "email",
+          "purpose": "年始挨拶と提案",
+          "outcome": "neutral",
+          "response_time": "3日",
+          "notes": "検討継続中。競合との比較検討。"
+        }
+      },
+      "contact_frequency": "月1回",
+      "preferred_contact_method": "email",
+      "decision_makers": ["総務部長"],
+      "relationship_strength": "moderate",
+      "satisfaction_rating": 3.8,
+      "revenue_history": {
+        "2024": 800000,
+        "2023": 750000,
+        "2022": 650000
+      },
+      "products_of_interest": ["RISO MH635", "消耗品"],
+      "seasonal_patterns": "設備更新周期",
+      "communication_style": "business",
+      "key_success_factors": ["コスト効率", "機能性", "サポート体制"]
+    }
+  },
+
+  "interaction_analytics": {
+    "total_interactions_ytd": 538,
+    "interaction_by_type": {
+      "visit": 245,
+      "call": 198,
+      "email": 95
+    },
+    "average_response_time": {
+      "email": "6.2時間",
+      "call": "2.1時間"
+    },
+    "conversion_rates": {
+      "visit_to_proposal": 0.68,
+      "proposal_to_order": 0.42,
+      "overall": 0.29
+    },
+    "customer_lifecycle": {
+      "acquisition": 17,
+      "development": 12,
+      "retention": 25,
+      "win_back": 3
+    },
+    "satisfaction_trends": {
+      "improving": 23,
+      "stable": 28,
+      "declining": 6
+    }
+  },
+
+  "communication_insights": {
+    "preferred_channels": {
+      "官公庁": "visit",
+      "教育機関": "call",
+      "一般企業": "email"
+    },
+    "optimal_contact_timing": {
+      "官公庁": "火水木 10:00-16:00",
+      "教育機関": "月火木 13:00-17:00",
+      "一般企業": "平日 9:00-18:00"
+    },
+    "message_effectiveness": {
+      "技術的詳細": 4.2,
+      "コスト効率": 4.0,
+      "導入実績": 4.3,
+      "アフターサポート": 4.1
+    }
+  },
+
+  "relationship_management": {
+    "strong_relationships": 8,
+    "developing_relationships": 12,
+    "at_risk_relationships": 3,
+    "relationship_building_activities": {
+      "定期訪問": "継続実施",
+      "技術勉強会": "月1回開催",
+      "季節挨拶": "年4回",
+      "導入後フォロー": "継続実施"
+    },
+    "customer_retention_strategies": {
+      "満足度調査": "年2回",
+      "改善提案": "継続実施",
+      "新製品紹介": "月1回",
+      "技術サポート": "24時間対応"
+    }
+  }
+}

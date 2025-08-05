@@ -1,0 +1,258 @@
+{
+  "name": "阪南ビジネスマシン メール送信ワークフロー",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "hannan-email-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "hannan-email-webhook"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "recipient_email",
+              "name": "recipient_email",
+              "type": "string",
+              "value": "={{ $json.email_data.recipients[0].email }}"
+            },
+            {
+              "id": "recipient_name", 
+              "name": "recipient_name",
+              "type": "string",
+              "value": "={{ $json.email_data.recipients[0].name }}"
+            },
+            {
+              "id": "email_subject",
+              "name": "email_subject", 
+              "type": "string",
+              "value": "={{ $json.email_data.subject }}"
+            },
+            {
+              "id": "email_content",
+              "name": "email_content",
+              "type": "string",
+              "value": "={{ $json.email_data.content }}"
+            },
+            {
+              "id": "urgency",
+              "name": "urgency",
+              "type": "string", 
+              "value": "={{ $json.email_data.urgency }}"
+            },
+            {
+              "id": "sender_company",
+              "name": "sender_company",
+              "type": "string",
+              "value": "={{ $json.email_data.sender_info.company }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "data-transform",
+      "name": "Set Email Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.recipient_email }}",
+        "subject": "={{ $json.email_subject }}",
+        "emailType": "text",
+        "message": "={{ $json.email_content }}",
+        "options": {
+          "ccEmail": "",
+          "bccEmail": "",
+          "priority": "={{ $json.urgency === 'urgent' ? 'high' : ($json.urgency === 'high' ? 'normal' : 'low') }}"
+        }
+      },
+      "id": "gmail-send",
+      "name": "Gmail Send",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [680, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "gmail-credentials",
+          "name": "Gmail Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "status",
+              "name": "status", 
+              "type": "string",
+              "value": "success"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "type": "string", 
+              "value": "メールを正常に送信しました"
+            },
+            {
+              "id": "sent_to",
+              "name": "sent_to",
+              "type": "string",
+              "value": "={{ $json.recipient_name }} ({{ $json.recipient_email }})"
+            },
+            {
+              "id": "timestamp",
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        }
+      },
+      "id": "response-data",
+      "name": "Format Response",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "statusCode": 200,
+        "responseBody": {
+          "status": "={{ $json.status }}",
+          "message": "={{ $json.message }}",
+          "sent_to": "={{ $json.sent_to }}",
+          "timestamp": "={{ $json.timestamp }}"
+        },
+        "options": {}
+      },
+      "id": "http-response",
+      "name": "Webhook Response", 
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "error_status",
+              "name": "status",
+              "type": "string", 
+              "value": "error"
+            },
+            {
+              "id": "error_message",
+              "name": "message",
+              "type": "string",
+              "value": "メール送信中にエラーが発生しました: {{ $json.error.message }}"
+            },
+            {
+              "id": "error_timestamp", 
+              "name": "timestamp",
+              "type": "string",
+              "value": "={{ $now.toISO() }}"
+            }
+          ]
+        }
+      },
+      "id": "error-response-data",
+      "name": "Format Error Response",
+      "type": "n8n-nodes-base.set", 
+      "typeVersion": 3.2,
+      "position": [900, 500]
+    },
+    {
+      "parameters": {
+        "statusCode": 500,
+        "responseBody": {
+          "status": "={{ $json.status }}",
+          "message": "={{ $json.message }}",
+          "timestamp": "={{ $json.timestamp }}"
+        }
+      },
+      "id": "error-http-response",
+      "name": "Error Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1120, 500]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Set Email Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Email Data": {
+      "main": [
+        [
+          {
+            "node": "Gmail Send", 
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Send": {
+      "main": [
+        [
+          {
+            "node": "Format Response",
+            "type": "main", 
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Response": {
+      "main": [
+        [
+          {
+            "node": "Webhook Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Error Response": {
+      "main": [
+        [
+          {
+            "node": "Error Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["hannan", "email", "business"],
+  "triggerCount": 1,
+  "updatedAt": "2025-01-07T23:45:00.000Z",
+  "versionId": "1"
+}

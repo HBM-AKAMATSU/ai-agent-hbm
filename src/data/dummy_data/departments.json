@@ -1,0 +1,169 @@
+[
+  {
+    "department_id": "DEPT-001",
+    "name": "営業部",
+    "manager": "山田 次郎",
+    "employee_count": 25,
+    "budget_annual": 150000000,
+    "targets": {
+      "sales_target_annual": 500000000,
+      "new_client_target": 50,
+      "customer_satisfaction": 4.5
+    },
+    "office_location": "東京本社 3F",
+    "contact": "03-1234-5600",
+    "responsibilities": [
+      "新規顧客開拓",
+      "既存顧客フォロー",
+      "営業戦略立案",
+      "売上管理"
+    ]
+  },
+  {
+    "department_id": "DEPT-002", 
+    "name": "経理部",
+    "manager": "高橋 美咲",
+    "employee_count": 12,
+    "budget_annual": 45000000,
+    "targets": {
+      "cost_reduction_rate": 5,
+      "payment_accuracy": 99.9,
+      "closing_days": 5
+    },
+    "office_location": "東京本社 2F",
+    "contact": "03-1234-5610",
+    "responsibilities": [
+      "財務会計",
+      "管理会計", 
+      "税務処理",
+      "予算管理",
+      "資金調達"
+    ]
+  },
+  {
+    "department_id": "DEPT-003",
+    "name": "人事部", 
+    "manager": "渡辺 由美",
+    "employee_count": 8,
+    "budget_annual": 35000000,
+    "targets": {
+      "employee_satisfaction": 4.2,
+      "turnover_rate": 5,
+      "training_completion_rate": 95
+    },
+    "office_location": "東京本社 2F",
+    "contact": "03-1234-5620",
+    "responsibilities": [
+      "採用活動",
+      "人事制度企画",
+      "労務管理",
+      "研修・教育",
+      "評価制度運用"
+    ]
+  },
+  {
+    "department_id": "DEPT-004",
+    "name": "総務部",
+    "manager": "森田 智子", 
+    "employee_count": 6,
+    "budget_annual": 80000000,
+    "targets": {
+      "facility_utilization": 85,
+      "cost_per_employee": 300000,
+      "compliance_score": 95
+    },
+    "office_location": "東京本社 1F",
+    "contact": "03-1234-5630",
+    "responsibilities": [
+      "施設管理",
+      "法務・コンプライアンス",
+      "株主総会運営",
+      "庶務全般",
+      "リスク管理"
+    ]
+  },
+  {
+    "department_id": "DEPT-005",
+    "name": "IT部",
+    "manager": "松本 和也",
+    "employee_count": 15,
+    "budget_annual": 120000000,
+    "targets": {
+      "system_uptime": 99.9,
+      "security_incident": 0,
+      "project_success_rate": 90
+    },
+    "office_location": "東京本社 4F",
+    "contact": "03-1234-5640",
+    "responsibilities": [
+      "システム開発・保守",
+      "インフラ管理",
+      "セキュリティ対策",
+      "DX推進",
+      "データ分析"
+    ]
+  },
+  {
+    "department_id": "DEPT-006",
+    "name": "製造部",
+    "manager": "加藤 雄一",
+    "employee_count": 40,
+    "budget_annual": 300000000,
+    "targets": {
+      "production_efficiency": 92,
+      "quality_rate": 99.5,
+      "safety_incidents": 0
+    },
+    "office_location": "埼玉工場",
+    "contact": "048-1234-5650",
+    "responsibilities": [
+      "製品製造",
+      "品質管理",
+      "生産計画",
+      "工程改善",
+      "安全管理"
+    ]
+  },
+  {
+    "department_id": "DEPT-007",
+    "name": "研究開発部",
+    "manager": "西村 博士",
+    "employee_count": 20,
+    "budget_annual": 200000000,
+    "targets": {
+      "new_product_development": 3,
+      "patent_applications": 5,
+      "research_success_rate": 70
+    },
+    "office_location": "技術センター",
+    "contact": "042-1234-5660",
+    "responsibilities": [
+      "新製品開発",
+      "基礎研究",
+      "特許出願",
+      "技術調査",
+      "外部機関連携"
+    ]
+  },
+  {
+    "department_id": "DEPT-008",
+    "name": "品質保証部",
+    "manager": "岡田 恵子",
+    "employee_count": 10,
+    "budget_annual": 60000000,
+    "targets": {
+      "defect_rate": 0.1,
+      "customer_complaint_resolution": 24,
+      "audit_score": 95
+    },
+    "office_location": "埼玉工場",
+    "contact": "048-1234-5670", 
+    "responsibilities": [
+      "製品検査",
+      "品質システム管理",
+      "顧客対応",
+      "監査対応",
+      "改善活動"
+    ]
+  }
+]

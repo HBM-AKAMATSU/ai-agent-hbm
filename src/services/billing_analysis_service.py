@@ -15,9 +15,9 @@ from collections import defaultdict
 class BillingAnalysisService:
     def __init__(self):
         self.model = ChatOpenAI(
-            model_name="gpt-4o-mini",
+            model_name="gpt-4o",
             openai_api_key=Config.OPENAI_API_KEY,
-            temperature=0
+            temperature=0.7
         )
         self.billing_data = self._load_billing_data()
         self.comprehensive_data = self._load_comprehensive_medical_data()
