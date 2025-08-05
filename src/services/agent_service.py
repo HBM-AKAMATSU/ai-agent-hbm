@@ -248,7 +248,7 @@ class OfficeAIAgent:
 
 必ず含める情報：
 - 申請システムURL: https://kintaiweb.azurewebsites.net/login/login/
-- 田中さんの連絡先（内線4004、akamatsu.d@hbm-web.co.jp）
+- 田中さんの連絡先（内線4004、katsura@hbm-web.co.jp）
 - AIからの自動メール送信サービス
 - 基本的な申請手順
 
@@ -260,7 +260,7 @@ class OfficeAIAgent:
 
 元の情報：
 勤怠管理システム（https://kintaiweb.azurewebsites.net/login/login/）から申請。
-田中さん（システムソリューション課、内線4004、akamatsu.d@hbm-web.co.jp）がパスワードサポート担当。
+田中さん（システムソリューション課、内線4004、katsura@hbm-web.co.jp）がパスワードサポート担当。
 AIから田中さんへの自動メール送信も可能。"""
             
             response = llm.invoke(prompt)
@@ -272,7 +272,7 @@ AIから田中さんへの自動メール送信も可能。"""
 
 勤怠管理システム（https://kintaiweb.azurewebsites.net/login/login/）から申請してください。システムにログインして、メニューから「有給申請」を選んで、日程と申請種別を選択するだけです。
 
-もしパスワードがわからなくてログインできない場合は、システムソリューション課の田中さん（内線4004）にお声がけください。メールアドレスはakamatsu.d@hbm-web.co.jpです。
+もしパスワードがわからなくてログインできない場合は、システムソリューション課の田中さん（内線4004）にお声がけください。メールアドレスはkatsura@hbm-web.co.jpです。
 
 私から田中さんに自動でパスワードリセットのメールを送ることもできますので、お困りでしたら「田中さんにメールを送って」とお声がけくださいね。
 

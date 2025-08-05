@@ -9,7 +9,7 @@ URL: https://kintaiweb.azurewebsites.net/login/login/
 ### ログインできない場合の重要な連絡先
 **システムソリューション課の田中さん**
 - **内線**: 4004  
-- **メール**: akamatsu.d@hbm-web.co.jp
+- **メール**: katsura@hbm-web.co.jp
 - **対応内容**: パスワード再設定のサポート
 
 ### AIアシスタントからの自動メール送信サービス
@@ -30,7 +30,7 @@ URL: https://kintaiweb.azurewebsites.net/login/login/
 
 ### ログインできない場合
 - **第一連絡先**: 田中さん（システムソリューション課）内線4004
-- **メール**: akamatsu.d@hbm-web.co.jp
+- **メール**: katsura@hbm-web.co.jp
 - **AIサポート**: 私から田中さんに自動メール送信可能
 
 ### その他のトラブル
@@ -55,7 +55,7 @@ URL: https://kintaiweb.azurewebsites.net/login/login/
 - 緊急連絡先は必ず記入してください
 
 ## 問い合わせ先まとめ
-- **システム操作・パスワード**: 田中さん（内線4004、akamatsu.d@hbm-web.co.jp）
+- **システム操作・パスワード**: 田中さん（内線4004、katsura@hbm-web.co.jp）
 - **有給制度**: 人事部（内線1001）
 - **承認状況**: 直属の上長
 - **AIメール送信**: 私にお声がけください
