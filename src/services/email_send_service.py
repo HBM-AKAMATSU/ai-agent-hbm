@@ -26,8 +26,8 @@ class EmailSendService:
             "小濱": "kohama@hbm-web.co.jp",
             "部長": "bucho@hbm-web.co.jp",
             "課長": "kacho@hbm-web.co.jp",
-            "田中": "akamatsu.d@hbm-web.co.jp",
-            "田中さん": "akamatsu.d@hbm-web.co.jp"
+            "田中": "katsura@hbm-web.co.jp",
+            "田中さん": "katsura@hbm-web.co.jp"
         }
     
     def should_send_email(self, user_message: str, ai_response: str) -> bool:
@@ -192,7 +192,7 @@ class EmailSendService:
         if "田中さん" in ai_response and ("パスワード" in ai_response or "ログイン" in ai_response or "勤怠" in ai_response):
             context["mentioned_contacts"].append({
                 "name": "田中さん",
-                "email": "akamatsu.d@hbm-web.co.jp",
+                "email": "katsura@hbm-web.co.jp",
                 "reason": "パスワードリセット",
                 "confidence": 0.9
             })
@@ -306,7 +306,7 @@ class EmailSendService:
             return {
                 "should_send": True,
                 "recipients": [{
-                    "email": "akamatsu.d@hbm-web.co.jp",
+                    "email": "katsura@hbm-web.co.jp",
                     "name": "田中さん",
                     "type": "staff"
                 }],
@@ -406,7 +406,7 @@ class EmailSendService:
             return {
                 "should_send": True,
                 "recipients": [{
-                    "email": "akamatsu.d@hbm-web.co.jp",
+                    "email": "katsura@hbm-web.co.jp",
                     "name": "田中さん",
                     "type": "staff"
                 }],
@@ -427,7 +427,7 @@ class EmailSendService:
         return {
             "should_send": True,
             "recipients": [{
-                "email": "akamatsu.d@hbm-web.co.jp",
+                "email": "katsura@hbm-web.co.jp",
                 "name": "田中さん",
                 "type": "staff"
             }],
@@ -495,7 +495,7 @@ class EmailSendService:
         return {
             "should_send": True,
             "recipients": [{
-                "email": "akamatsu.d@hbm-web.co.jp",
+                "email": "katsura@hbm-web.co.jp",
                 "name": "田中さん",
                 "type": "staff"
             }],
@@ -558,7 +558,7 @@ class EmailSendService:
         # N8N用ペイロード作成（単純構造）
         # 最初の受信者を取得
         first_recipient = email_request["recipients"][0] if email_request["recipients"] else {
-            "email": "akamatsu.d@hbm-web.co.jp",
+            "email": "katsura@hbm-web.co.jp",
             "name": "田中さん"
         }
         
