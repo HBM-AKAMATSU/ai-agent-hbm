@@ -12,7 +12,7 @@ def test_hannan_webhook():
     
     # 実際のメール送信データと同じ形式でテスト
     test_payload = {
-        "recipient_email": "akamatsu.d@hbm-web.co.jp",
+        "recipient_email": "katsura@hbm-web.co.jp",
         "recipient_name": "田中さん",
         "email_subject": "【パスワードリセット依頼】勤怠管理システム",
         "email_content": """田中様

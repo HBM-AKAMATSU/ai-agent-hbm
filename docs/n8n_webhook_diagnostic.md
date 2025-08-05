@@ -84,7 +84,7 @@ N8N_WEBHOOK_URL = "http://localhost:3000/webhook/test"  # テスト用
 curl -X POST https://n8n.xvps.jp/webhook/新しいエンドポイント \
   -H "Content-Type: application/json" \
   -d '{
-    "recipient_email": "akamatsu.d@hbm-web.co.jp",
+    "recipient_email": "katsura@hbm-web.co.jp",
     "recipient_name": "田中さん",
     "email_subject": "【テスト】メール送信復旧テスト",
     "email_content": "n8nメール送信機能のテストです。",

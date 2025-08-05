@@ -14,7 +14,7 @@ def test_n8n_webhook():
     
     # テストペイロード
     test_payload = {
-        "recipient_email": "akamatsu.d@hbm-web.co.jp",
+        "recipient_email": "katsura@hbm-web.co.jp",
         "recipient_name": "田中さん",
         "email_subject": "【テスト】パスワードリセット依頼",
         "email_content": "これはテストメールです。N8Nワークフローの動作確認のため送信しています。",

@@ -19,7 +19,7 @@ print(f"現在のN8N_WEBHOOK_URL: {n8n_url}")
 
 # テストペイロード
 test_payload = {
-    "recipient_email": "akamatsu.d@hbm-web.co.jp",
+    "recipient_email": "katsura@hbm-web.co.jp",
     "recipient_name": "田中さん",
     "email_subject": "【テスト】更新されたWebhook URLテスト",
     "email_content": f"""田中様
