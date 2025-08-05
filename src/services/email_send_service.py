@@ -599,15 +599,12 @@ class EmailSendService:
                 message = result.get("message", "メール送信処理を開始しました")
                 
                 recipients_text = ", ".join([r["name"] for r in email_request["recipients"]])
-                return f"""📧 **メール送信完了**
-
-✅ {message}
-
-**宛先**: {recipients_text}
-**件名**: {email_request["subject"]}
-**緊急度**: {email_request["urgency"]}
-
-メールの配信完了まで少々お時間をいただく場合があります。"""
+                
+                # 緊急度に応じた対応時間の表現
+                response_time = "比較的早めにご対応いただけると思います" if email_request["urgency"] in ["high", "urgent"] else "ご都合の良いときにご対応いただけると思います"
+                
+                return f"""承知いたしました。{recipients_text}にメールをお送りしておきました。
+{email_request["subject"]}の件でご連絡しています。{response_time}。メールが届くまで少しお時間をいただく場合がありますが、よろしくお願いします。"""
                 
             else:
                 return f"⚠️ メール送信処理でエラーが発生しました。(ステータス: {response.status_code})"
