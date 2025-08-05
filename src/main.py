@@ -231,8 +231,77 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    """ヘルスチェック用エンドポイント"""
-    return {"status": "healthy", "timestamp": "2024-01-01T00:00:00Z"}
+    """詳細ヘルスチェック用エンドポイント"""
+    from datetime import datetime
+    import os
+    import psutil
+    
+    try:
+        # システム情報収集
+        cpu_percent = psutil.cpu_percent(interval=1)
+        memory = psutil.virtual_memory()
+        disk = psutil.disk_usage('/')
+        
+        # ベクトルデータベースの存在確認
+        faiss_office_exists = os.path.exists("faiss_index_office/index.faiss")
+        faiss_sales_exists = os.path.exists("faiss_index_sales/index.faiss")
+        
+        # 環境変数の存在確認
+        required_env_vars = [
+            "OPENAI_API_KEY", "LINE_CHANNEL_ACCESS_TOKEN", 
+            "LINE_CHANNEL_SECRET", "SERPER_API_KEY"
+        ]
+        env_status = {var: bool(os.getenv(var)) for var in required_env_vars}
+        
+        health_status = {
+            "status": "healthy",
+            "timestamp": datetime.now().isoformat(),
+            "service": {
+                "name": "阪南ビジネスマシン Smart Office Assistant",
+                "version": "1.0.0",
+                "company": "阪南ビジネスマシン株式会社"
+            },
+            "system": {
+                "cpu_percent": cpu_percent,
+                "memory_percent": memory.percent,
+                "memory_available_gb": round(memory.available / (1024**3), 2),
+                "disk_percent": disk.percent,
+                "disk_free_gb": round(disk.free / (1024**3), 2)
+            },
+            "databases": {
+                "faiss_office_ready": faiss_office_exists,
+                "faiss_sales_ready": faiss_sales_exists
+            },
+            "environment": {
+                "variables_configured": env_status,
+                "all_required_present": all(env_status.values())
+            }
+        }
+        
+        # システムリソースが不足している場合は警告ステータス
+        if cpu_percent > 90 or memory.percent > 90 or disk.percent > 90:
+            health_status["status"] = "warning"
+            health_status["warnings"] = []
+            if cpu_percent > 90:
+                health_status["warnings"].append("High CPU usage")
+            if memory.percent > 90:
+                health_status["warnings"].append("High memory usage")
+            if disk.percent > 90:
+                health_status["warnings"].append("High disk usage")
+        
+        # 必須環境変数が不足している場合はエラーステータス
+        if not all(env_status.values()):
+            health_status["status"] = "error"
+            health_status["error"] = "Missing required environment variables"
+        
+        return health_status
+        
+    except Exception as e:
+        return {
+            "status": "error",
+            "timestamp": datetime.now().isoformat(),
+            "error": str(e)
+        }
 
 # タイムアウト保護のための即座応答リスト
 QUICK_RESPONSES = {

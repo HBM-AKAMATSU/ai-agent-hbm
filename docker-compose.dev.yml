@@ -1,0 +1,126 @@
+# docker-compose.dev.yml - 開発環境用
+# 阪南ビジネスマシン AIエージェント（開発・テスト用）
+
+version: '3.8'
+
+services:
+  # 開発用AIエージェント
+  ai-agent-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: hbm-ai-agent-dev
+    restart: "no"  # 開発時は自動再起動なし
+    
+    # 環境変数（開発用）
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      - DEVELOPMENT=true
+      - DEBUG=true
+    
+    env_file:
+      - .env  # 開発用.envファイル
+    
+    # ポート設定（直接公開）
+    ports:
+      - "8000:8000"
+    
+    # ボリュームマウント（開発用）
+    volumes:
+      # ソースコードをマウント（ホットリロード対応）
+      - ./src:/app/src
+      - ./setup_vector_db.py:/app/setup_vector_db.py
+      - ./requirements.txt:/app/requirements.txt
+      
+      # データファイル
+      - ./faiss_index_office:/app/faiss_index_office
+      - ./faiss_index_sales:/app/faiss_index_sales
+      - ./faiss_index_procedures:/app/faiss_index_procedures
+      - ./data:/app/data
+      - ./src/data:/app/src/data
+      
+      # ログとテスト結果
+      - ./logs:/app/logs
+      - ./test_results:/app/test_results
+    
+    # 開発用コマンド（ホットリロード）
+    command: >
+      sh -c "
+        echo '🔧 開発モードで起動中...' &&
+        pip install --no-cache-dir uvicorn[standard] &&
+        uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir src
+      "
+    
+    # ネットワーク
+    networks:
+      - dev-network
+
+  # 開発用データベース管理
+  db-manager:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: hbm-db-manager
+    restart: "no"
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./:/app/project
+      - ./faiss_index_office:/app/faiss_index_office
+      - ./faiss_index_sales:/app/faiss_index_sales
+      - ./faiss_index_procedures:/app/faiss_index_procedures
+      - ./data:/app/data
+      - ./src/data:/app/src/data
+    
+    # データベース管理用コマンド
+    command: >
+      sh -c "
+        echo '🗄️ データベース管理コンテナ起動' &&
+        echo '利用可能なコマンド:' &&
+        echo '  - python setup_vector_db.py (DB再構築)' &&
+        echo '  - python debug_database.py (DB診断)' &&
+        tail -f /dev/null
+      "
+    
+    networks:
+      - dev-network
+
+  # テスト実行環境
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: hbm-test-runner
+    restart: "no"
+    
+    env_file:
+      - .env
+    
+    volumes:
+      - ./:/app/project
+      - ./test_results:/app/test_results
+    
+    # テスト実行用コマンド
+    command: >
+      sh -c "
+        echo '🧪 テスト環境準備中...' &&
+        pip install --no-cache-dir pytest pytest-asyncio &&
+        echo 'テスト実行可能。以下のコマンドを使用:' &&
+        echo '  docker-compose -f docker-compose.dev.yml exec test-runner pytest' &&
+        echo '  docker-compose -f docker-compose.dev.yml exec test-runner python test_*.py' &&
+        tail -f /dev/null
+      "
+    
+    networks:
+      - dev-network
+
+# 開発用ネットワーク
+networks:
+  dev-network:
+    driver: bridge

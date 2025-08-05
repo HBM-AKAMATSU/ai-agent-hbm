@@ -6,6 +6,7 @@ python-dotenv
 requests
 pandas
 faiss-cpu
+psutil
 # LangChain関連は最新版に統一
 langchain
 langchain-core

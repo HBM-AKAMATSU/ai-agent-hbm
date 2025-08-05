@@ -1,0 +1,76 @@
+# docker-compose.safe.yml - 共有VPS安全版
+# n8n.xvps.jp上で既存サービスと競合しない設定
+
+version: '3.8'
+
+services:
+  # AIエージェントアプリケーション（ポート分離）
+  hbm-ai-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: hbm-ai-agent-app
+    restart: unless-stopped
+    
+    # 環境変数
+    env_file:
+      - .env.production
+    
+    # 専用ポート（8001）- n8nや他サービスと競合回避
+    ports:
+      - "127.0.0.1:8001:8000"
+    
+    # ボリュームマウント（専用ディレクトリ）
+    volumes:
+      # ベクトルデータベース（AI専用パス）
+      - ./hbm-ai/faiss_index_office:/app/faiss_index_office
+      - ./hbm-ai/faiss_index_sales:/app/faiss_index_sales  
+      - ./hbm-ai/faiss_index_procedures:/app/faiss_index_procedures
+      
+      # データファイル（AI専用パス）
+      - ./hbm-ai/data:/app/data
+      - ./src/data:/app/src/data
+      
+      # ログ（AI専用パス）
+      - ./hbm-ai/logs:/app/logs
+      
+      # 設定ファイル
+      - ./src/config.py:/app/src/config.py:ro
+    
+    # リソース制限（共有環境考慮）
+    deploy:
+      resources:
+        limits:
+          memory: 3G  # 共有環境のため削減
+          cpus: '1.5'
+        reservations:
+          memory: 1.5G
+          cpus: '0.5'
+    
+    # ヘルスチェック
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    
+    # 専用ネットワーク
+    networks:
+      - hbm-ai-network
+
+# 専用ネットワーク（他サービスと分離）
+networks:
+  hbm-ai-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16  # n8nと異なるサブネット
+
+# 専用ボリューム
+volumes:
+  hbm-ai-faiss:
+    driver: local
+  hbm-ai-logs:
+    driver: local
